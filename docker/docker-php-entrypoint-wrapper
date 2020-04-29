@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+echo Running custom entrypoint
+cd /var/www/html/
+mkdir -p bootstrap/cache
+mkdir -p storage/framework/sessions
+mkdir -p storage/framework/views
+mkdir -p storage/framework/cache
+php artisan key:generate --force
+php artisan migrate --force
+echo "Starting server"
+php artisan serve --port=8000d
