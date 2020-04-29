@@ -9,4 +9,4 @@ mkdir -p storage/framework/cache
 php artisan key:generate --force
 php artisan migrate --force
 echo "Starting server"
-php artisan serve --port=8000d
+php artisan serve --port=8000
