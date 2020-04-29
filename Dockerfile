@@ -32,7 +32,7 @@ WORKDIR /var/www/html/
 
 RUN composer install --prefer-dist --optimize-autoloader --classmap-authoritative --no-dev --quiet
 RUN chown -R www-data:www-data /var/www/html/
-EXPOSE 8000
+EXPOSE 80
 COPY docker/docker-php-entrypoint-wrapper /usr/local/bin/
 RUN chmod 775 /usr/local/bin/docker-php-entrypoint-wrapper
 ENTRYPOINT [ "/usr/local/bin/docker-php-entrypoint-wrapper" ]
